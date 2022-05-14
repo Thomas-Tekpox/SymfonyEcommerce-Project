@@ -1,0 +1,39 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+	Accueil
+{% endblock %}
+
+{% block body %}
+
+	<h1>Nos produits phares</h1>
+	<div class="row">
+		{% for p in products %}
+			<div class="col">
+				<div class="card">
+					<img src="{{p.mainPicture}}" alt="Image du produit" class="img-fluid">
+					<div class="card-body">
+						<h4 class="card-title">{{p.name}}
+							({{p.price/100}}
+							&euro;)</h4>
+
+						<span class="badge rounded-pill bg-primary">{{p.category.name}}</span>
+
+						<p class="card-text">{{p.shortDescription}}</p>
+						<a href="#" class="btn btn-primary btn-sm">Détails</a>
+						<a href="" class="btn btn-success btn-sm">Ajouter</a>
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+	<hr>
+	<h2>Un service irreprochable</h2>
+	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis labore perspiciatis suscipit et. Earum aut obcaecati ipsam dolore corrupti maxime cumque velit natus, officiis consequatur animi laboriosam vitae impedit! Sapiente.</p>
+	<div class="row">
+		{% include "shared/_assurance.html.twig" with {'color': 'primary', 'icon': 'truck', 'text': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo perferendis omnis possimus mollitia atque ut.'} %}
+		{% include "shared/_assurance.html.twig" with {'color': 'success', 'icon': 'check', 'text': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo perferendis omnis possimus mollitia atque ut.'} %}
+		{% include "shared/_assurance.html.twig" with {'color': 'warning', 'icon': 'lock', 'text': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo perferendis omnis possimus mollitia atque ut.'} %}
+	</div>
+
+{% endblock %}

@@ -1,0 +1,12 @@
+# test:
+#   path: /test/{age<\d+>?0}
+#   controller: App\Controller\TestController::test
+#   methods: [GET, POST]
+#   schemes: [https, http]
+#   host: localhost # à supprimer quand on le met en prod
+#   #   {subdomain}.monsite.com
+#   #   api.monsite.com / www.monsite.com / monsite.com
+#   # defaults:
+#   #   age: 0
+#   # requirements:
+#   #   age: \d+
